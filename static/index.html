@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="pico.amber.min.css">
+        <script src="wakeonweb.js"></script>
+        <title>Wake on Web</title>
+    </head>
+    <body>
+        <main class="container">
+            <h1>Wake on Web</h1>
+            <hr />
+            <br>
+            <form action="/api/wake" method="post" id="wake_form">
+                <fieldset>
+                    <label>
+                        Target MAC Address:
+                        <input
+                                type="text"
+                                id="mac"
+                                name="mac"
+                        />
+                    </label>
+
+                    <label>
+                        Broadcast Address:
+                        <input
+                                type="text"
+                                id="broadcast"
+                                name="broadcast"
+                                placeholder="255.255.255.255"
+                        />
+                    </label>
+
+                    <label>
+                        Port:
+                        <input
+                                type="text"
+                                id="port"
+                                name="port"
+                                placeholder="9"
+                        />
+                    </label>
+                </fieldset>
+                <input onclick="submitForm()" type="button" value="Wake!">
+            </form>
+            <br>
+            <p id="wake_status" style="text-align: center"><i>Ready to send Magic Packet!</i></p>
+        </main>
+
+    </body>
+</html>
