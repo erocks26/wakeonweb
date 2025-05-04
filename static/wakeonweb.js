@@ -1,6 +1,10 @@
 async function submitForm() {
     const formData = new FormData(document.getElementById("wake_form"))
 
+    if (formData.get("mac") === "ethan-pc") {
+        formData.set("mac", "D8:43:AE:14:E7:FE")
+    }
+
     if (formData.get("broadcast") === "") {
         formData.set("broadcast", "255.255.255.255");
     }
